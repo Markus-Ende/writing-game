@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.main {
+  flex-grow: 1;
+  flex-basis: 1;
+  height: 1px;
+  background: #fbe4ff;
+}
+.button-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+  min-height: 6rem;
+  background: lightblue;
+  font-size: 6rem;
+  line-height: 6rem;
+  color: white;
+}
