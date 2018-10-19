@@ -16,8 +16,7 @@ export class TaskComponent {
   constructor(activatedRoute: ActivatedRoute, private readonly taskService: TasksService) {
     this.id$ = activatedRoute.paramMap.pipe(
       map(paramMap => paramMap.get('id')),
-      map(id => taskService.getTask(id)),
-      tap(task => this.taskService.say(task))
+      map(id => taskService.getTask(id))
     );
   }
 

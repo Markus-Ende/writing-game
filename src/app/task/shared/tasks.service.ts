@@ -49,6 +49,7 @@ export class TasksService {
   navigateToRandomTask() {
     const randomTask = tasks[Math.floor(Math.random() * tasks.length)];
     this.navigateToTask(randomTask.id);
+    this.say(randomTask);
   }
 
   say(task: Task) {
