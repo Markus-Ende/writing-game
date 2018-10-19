@@ -1,7 +1,8 @@
+import { SpeechService } from './../../shared/speech.service';
 import { TasksService } from './../shared/tasks.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs/operators';
+import { map, first, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -12,10 +13,15 @@ import { Observable } from 'rxjs';
 export class TaskComponent {
   public readonly id$: Observable<Task>;
 
-  constructor(activatedRoute: ActivatedRoute, taskService: TasksService) {
+  constructor(activatedRoute: ActivatedRoute, private readonly taskService: TasksService) {
     this.id$ = activatedRoute.paramMap.pipe(
       map(paramMap => paramMap.get('id')),
-      map(id => taskService.getTask(id))
+      map(id => taskService.getTask(id)),
+      tap(task => this.taskService.say(task))
     );
+  }
+
+  speak() {
+    this.id$.pipe(first()).subscribe(task => this.taskService.say(task));
   }
 }

@@ -1,3 +1,4 @@
+import { SpeechService } from './../../shared/speech.service';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -16,6 +17,11 @@ const tasks: Task[] = [
     id: 'pig',
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Emojione_BW_1F416.svg',
     letters: 'SCHWEIN'
+  },
+  {
+    id: 'swan',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Meuble_h%C3%A9raldique_cygne_nageant.svg',
+    letters: 'SCHWAN'
   }
 ];
 
@@ -23,7 +29,7 @@ const tasks: Task[] = [
   providedIn: 'root'
 })
 export class TasksService {
-  constructor(private readonly router: Router) {}
+  constructor(private readonly router: Router, private readonly speech: SpeechService) {}
 
   getTask(id: string): Task {
     if (id === 'initial') {
@@ -43,5 +49,9 @@ export class TasksService {
   navigateToRandomTask() {
     const randomTask = tasks[Math.floor(Math.random() * tasks.length)];
     this.navigateToTask(randomTask.id);
+  }
+
+  say(task: Task) {
+    this.speech.say(task.letters);
   }
 }
