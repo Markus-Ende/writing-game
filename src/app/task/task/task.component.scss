@@ -12,10 +12,15 @@
 }
 
 .task__image {
+  align-self: stretch;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
   flex-grow: 1;
 }
 
 .task__letters {
   font-family: 'sans-serif';
-  font-size: 5rem;
+  font-size: 2rem;
 }

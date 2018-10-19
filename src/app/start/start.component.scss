@@ -7,11 +7,12 @@
 
 .start {
   background-color: rebeccapurple;
-  border-radius: 15px;
+  border-radius: 1rem;
   color: white;
   font-size: 8rem;
   width: 12rem;
   height: 12rem;
-  line-height: 12rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
