@@ -7,15 +7,51 @@
   flex-grow: 1;
   flex-basis: 1;
   height: 1px;
-  background: #fbe4ff;
 }
+
+:host(.tasks--red) {
+  .main {
+    background-color: #f89588;
+  }
+}
+
+:host(.tasks--green) {
+  .main {
+    background-color: #7efc4d;
+  }
+}
+
+:host(.tasks--yellow) {
+  .main {
+    background-color: #e2fc4d;
+  }
+}
+
+:host(.tasks--blue) {
+  .main {
+    background-color: #4d59fc;
+  }
+}
+
+:host(.tasks--orange) {
+  .main {
+    background-color: #fcb64d;
+  }
+}
+
+:host(.tasks--pink) {
+  .main {
+    background-color: #ed4dfc;
+  }
+}
+
 .button-next {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 20%;
   min-height: 6rem;
-  background: lightblue;
+  background: #29b7ca;
   font-size: 6rem;
   line-height: 6rem;
   color: white;
