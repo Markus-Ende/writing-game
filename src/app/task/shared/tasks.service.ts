@@ -1,30 +1,8 @@
-import { SpeechService } from './../../shared/speech.service';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, BehaviorSubject } from 'rxjs';
-
-const tasks: Task[] = [
-  {
-    id: 'unicorn',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/22/Einhorn-Grafik.svg',
-    letters: 'EINHORN'
-  },
-  {
-    id: 'christmas-tree',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/30/Color_this_christmas_tree.svg',
-    letters: 'WEIHNACHTSBAUM'
-  },
-  {
-    id: 'pig',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Emojione_BW_1F416.svg',
-    letters: 'SCHWEIN'
-  },
-  {
-    id: 'swan',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Meuble_h%C3%A9raldique_cygne_nageant.svg',
-    letters: 'SCHWAN'
-  }
-];
+import { BehaviorSubject, Observable } from 'rxjs';
+import { SpeechService } from './../../shared/speech.service';
+import { tasks } from './tasks';
 
 @Injectable({
   providedIn: 'root'
