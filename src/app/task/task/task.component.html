@@ -1,4 +1,6 @@
 <div class="task" *ngIf="id$ | async as id">
   <div class="task__image" [style.background-image]="'url('+id.imageUrl+')'"></div>
-  <app-letters class="task__letters" [text]="id.letters"></app-letters>
+  <div class="task__letters">
+    <app-letters [text]="id.letters"></app-letters>
+  </div>
 </div>
