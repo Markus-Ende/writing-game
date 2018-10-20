@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-letters',
   templateUrl: './letters.component.html',
-  styleUrls: ['./letters.component.scss']
+  styleUrls: ['./letters.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LettersComponent {
   public letters: string[] = '[Text Input]'.split('');

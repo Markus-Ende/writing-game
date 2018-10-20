@@ -1,14 +1,14 @@
-import { SpeechService } from './../../shared/speech.service';
-import { TasksService } from './../shared/tasks.service';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, first, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { first, map } from 'rxjs/operators';
+import { TasksService } from './../shared/tasks.service';
 
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
-  styleUrls: ['./task.component.scss']
+  styleUrls: ['./task.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaskComponent {
   public readonly id$: Observable<Task>;

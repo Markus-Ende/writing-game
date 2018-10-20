@@ -1,20 +1,21 @@
-import { SpeechService } from './../shared/speech.service';
-import { TasksService } from './../task/shared/tasks.service';
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { TasksService } from './../task/shared/tasks.service';
+import { StartService } from './start.service';
 
 @Component({
   selector: 'app-start',
   templateUrl: './start.component.html',
-  styleUrls: ['./start.component.scss']
+  styleUrls: ['./start.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StartComponent implements OnInit {
   faPlay = faPlay;
 
-  constructor(private readonly tasksService: TasksService, private readonly speech: SpeechService) {}
+  constructor(private readonly tasksService: TasksService, private startService: StartService) {}
 
   ngOnInit() {
-    this.speech.say('Hallo Hannah! Wenn du anfangen möchtest, drücke auf den lila Knopf.', 1.2);
+    this.startService.greetIfFirstStart();
   }
 
   start() {

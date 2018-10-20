@@ -1,6 +1,7 @@
 import { SpeechService } from './../../shared/speech.service';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 const tasks: Task[] = [
   {
@@ -29,31 +30,61 @@ const tasks: Task[] = [
   providedIn: 'root'
 })
 export class TasksService {
-  constructor(private readonly router: Router, private readonly speech: SpeechService) {}
+  public readonly allRandomTasksDone$: Observable<boolean>;
+  private randomTasks: Task[];
+  private isFirstTask = true;
+
+  constructor(private readonly router: Router, private readonly speech: SpeechService) {
+    this.allRandomTasksDone$ = new BehaviorSubject(false);
+    this.resetRandomTasks();
+  }
+
+  private get allRandomTasksDone$$() {
+    return this.allRandomTasksDone$ as BehaviorSubject<boolean>;
+  }
+
+  private resetRandomTasks() {
+    this.randomTasks = tasks.slice(0);
+    if (this.allRandomTasksDone$$.value === true) {
+      this.allRandomTasksDone$$.next(false);
+    }
+  }
+
+  public restart() {
+    this.resetRandomTasks();
+    this.speech.cancelCurrentSpeach();
+    this.speech.say('Super! Du hast alles fertig gemacht! Willst du nochmal von vorne anfangen?');
+    this.router.navigate(['/']);
+  }
 
   getTask(id: string): Task {
-    if (id === 'initial') {
-      return {
-        id: 'initial',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Emojione_BW_1F917.svg',
-        letters: ''
-      };
-    }
     return tasks.find(task => task.id === id);
   }
 
-  navigateToTask(id: string) {
+  private navigateToTask(id: string) {
     this.router.navigate(['tasks', id]);
   }
 
   navigateToRandomTask() {
-    const randomTask = tasks[Math.floor(Math.random() * tasks.length)];
+    if (!this.randomTasks || this.randomTasks.length === 0) {
+      return;
+    }
+    const randomIndex = Math.floor(Math.random() * this.randomTasks.length);
+    const randomTask = this.randomTasks.splice(randomIndex, 1)[0];
     this.navigateToTask(randomTask.id);
     this.say(randomTask);
+    if (this.isFirstTask) {
+      this.speech.say('Wenn du das nächste Wort sehen willst, drücke auf den blauen Knopf.');
+      this.isFirstTask = false;
+    }
+    if (this.randomTasks.length === 0) {
+      this.allRandomTasksDone$$.next(true);
+    }
   }
 
   say(task: Task) {
-    this.speech.say(task.letters);
+    this.speech.cancelCurrentSpeach();
+    this.speech.say(task.letters, 0.8);
     this.speech.spell(task.letters);
   }
 }

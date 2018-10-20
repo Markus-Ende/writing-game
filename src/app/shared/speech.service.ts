@@ -15,7 +15,11 @@ export class SpeechService {
     }
   }
 
-  public say(text: string, rate = 0.8) {
+  public cancelCurrentSpeach() {
+    this.speachSythesis.cancel();
+  }
+
+  public say(text: string, rate = 1) {
     if (this.speachSythesis) {
       const utterFullWord = new SpeechSynthesisUtterance(text);
       utterFullWord.lang = 'de-DE';

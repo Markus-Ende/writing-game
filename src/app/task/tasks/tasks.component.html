@@ -1,6 +1,13 @@
 <div class="main">
   <router-outlet></router-outlet>
 </div>
-<div class="button-next" (click)="nextTask()">
+
+<div *ngIf="!(allTasksDone$ | async); else restartbutton" class="button-next" (click)="nextTask()">
   <fa-icon [icon]="faAngleDoubleRight"></fa-icon>
 </div>
+
+<ng-template #restartbutton>
+  <div class="button-next" (click)="restart()">
+    <fa-icon [icon]="faAngleDoubleRight"></fa-icon>
+  </div>
+</ng-template>
