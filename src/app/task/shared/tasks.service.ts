@@ -54,5 +54,6 @@ export class TasksService {
 
   say(task: Task) {
     this.speech.say(task.letters);
+    this.speech.spell(task.letters);
   }
 }

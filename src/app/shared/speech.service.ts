@@ -15,19 +15,21 @@ export class SpeechService {
     }
   }
 
-  public say(text: string) {
+  public say(text: string, rate = 0.8) {
     if (this.speachSythesis) {
       const utterFullWord = new SpeechSynthesisUtterance(text);
       utterFullWord.lang = 'de-DE';
-      utterFullWord.rate = 0.8;
+      utterFullWord.rate = rate;
       this.speachSythesis.speak(utterFullWord);
-
-      text.split('').forEach(letter => {
-        const utterLetter = new SpeechSynthesisUtterance(letter);
-        utterLetter.lang = 'de-DE';
-        utterLetter.rate = 0.5;
-        this.speachSythesis.speak(utterLetter);
-      });
     }
+  }
+
+  public spell(letters: string) {
+    letters.split('').forEach(letter => {
+      const utterLetter = new SpeechSynthesisUtterance(letter);
+      utterLetter.lang = 'de-DE';
+      utterLetter.rate = 0.5;
+      this.speachSythesis.speak(utterLetter);
+    });
   }
 }
