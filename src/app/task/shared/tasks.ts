@@ -58,5 +58,20 @@ export const tasks: Task[] = [
     id: 'snail',
     imageUrl: 'https://svgsilh.com/svg/2660353.svg',
     letters: 'SCHNECKE'
+  },
+  {
+    id: 'dinosaur',
+    imageUrl: 'https://svgsilh.com/svg/153790.svg',
+    letters: 'DINOSAURIER'
+  },
+  {
+    id: 'ship',
+    imageUrl: 'https://svgsilh.com/svg/1296422.svg',
+    letters: 'SCHIFF'
+  },
+  {
+    id: 'clown',
+    imageUrl: 'https://svgsilh.com/svg/28836.svg',
+    letters: 'CLOWN'
   }
 ];
