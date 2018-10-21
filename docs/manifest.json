@@ -1,0 +1,20 @@
+{
+  "short_name": "HANNAH",
+  "name": "Hannah's Schreibspiel",
+  "icons": [
+    {
+      "src": "/assets/icon_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/icon_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "mediumorchid",
+  "display": "standalone",
+  "theme_color": "mediumorchid"
+}
