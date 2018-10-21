@@ -1,6 +1,6 @@
-<div class="task" *ngIf="id$ | async as id">
-  <div class="task__image" [style.background-image]="'url('+id.imageUrl+')'" (click)="speak()"></div>
+<div class="task" *ngIf="task$ | async as task">
+  <div class="task__image" [style.background-image]="'url('+task.imageUrl+')'" (click)="speak()"></div>
   <div class="task__letters">
-    <app-letters [text]="id.letters"></app-letters>
+    <app-letters [text]="letters$$ | async"></app-letters>
   </div>
 </div>
