@@ -62,7 +62,7 @@ export class TasksService {
 
   say(task: Task) {
     this.speech.cancelCurrentSpeach();
-    this.speech.say(task.letters.toLowerCase(), 0.8); // use lower case to avoid saying things like "upper-case A" on some browsers
-    this.speech.spell(task.letters);
+    this.speech.say(task.letters, 0.8);
+    this.speech.spell(task.letters.toLowerCase()); // use lower case to avoid saying things like "upper-case A" on some browsers
   }
 }
