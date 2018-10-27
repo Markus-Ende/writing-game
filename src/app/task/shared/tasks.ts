@@ -73,5 +73,45 @@ export const tasks: Task[] = [
     id: 'clown',
     imageUrl: 'https://svgsilh.com/svg/28836.svg',
     letters: 'CLOWN'
+  },
+  {
+    id: 'ant',
+    imageUrl: 'https://svgsilh.com/svg/159756.svg',
+    letters: 'AMEISE'
+  },
+  {
+    id: 'woman',
+    imageUrl: 'https://svgsilh.com/svg/2027228.svg',
+    letters: 'FRAU'
+  },
+  {
+    id: 'crown',
+    imageUrl: 'https://svgsilh.com/svg/1296751.svg',
+    letters: 'KRONE'
+  },
+  {
+    id: 'castle',
+    imageUrl: 'https://svgsilh.com/svg/2027573.svg',
+    letters: 'BURG'
+  },
+  {
+    id: 'baby',
+    imageUrl: 'https://svgsilh.com/svg/1405883.svg',
+    letters: 'BABY'
+  },
+  {
+    id: 'ghost',
+    imageUrl: 'https://svgsilh.com/svg/2022412.svg',
+    letters: 'GESPENST'
+  },
+  {
+    id: 'dragon',
+    imageUrl: 'https://svgsilh.com/svg/2027671.svg',
+    letters: 'DRACHE'
+  },
+  {
+    id: 'bear',
+    imageUrl: 'https://svgsilh.com/svg/30787.svg',
+    letters: 'BÄR'
   }
 ];
