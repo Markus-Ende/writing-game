@@ -1,0 +1,59 @@
+{
+  "configVersion": 1,
+  "index": "/writing-game/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/writing-game/favicon.ico",
+        "/writing-game/index.html",
+        "/writing-game/main.129e9b725168decae7d9.js",
+        "/writing-game/polyfills.c6871e56cb80756a5498.js",
+        "/writing-game/runtime.ec2944dd8b20ec099bf3.js",
+        "/writing-game/styles.2cb7a2979db8768809a2.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/writing-game/assets/icon_192.png",
+        "/writing-game/assets/icon_512.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/writing-game/assets/icon_192.png": "9f3a35cc6fa91142dbf46ec24946bb289ceaf076",
+    "/writing-game/assets/icon_512.png": "f22247a28e76f1077f8bdde6f7685fe5eabd532f",
+    "/writing-game/favicon.ico": "eeed77e2f293efdc2ca16012893dd0dc7d652a09",
+    "/writing-game/index.html": "3abb1bb0eca79851dd07510ee132329aedb65bee",
+    "/writing-game/main.129e9b725168decae7d9.js": "16099ce6a6bb29ba7a4d774d2fa78980016bbabe",
+    "/writing-game/polyfills.c6871e56cb80756a5498.js": "ce68d153e9b9b6d26b625069c0ee99ae09c6f255",
+    "/writing-game/runtime.ec2944dd8b20ec099bf3.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
+    "/writing-game/styles.2cb7a2979db8768809a2.css": "c9ae5c55680276483d6d131235ecd3c8e596678b"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
