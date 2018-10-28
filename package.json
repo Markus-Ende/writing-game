@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy:gh-pages": "ng build --prod --base-href /writing-game --deploy-url /writing-game/ && cp -r dist/writing-game/* docs && git add docs && git commit -m \"chore: deploy gh-pages\" && git push"
+    "deploy:gh-pages": "ng build --prod --base-href /writing-game/ && cp -r dist/writing-game/* docs && git add docs && git commit -m \"chore: deploy gh-pages\" && git push"
   },
   "private": true,
   "dependencies": {
